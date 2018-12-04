@@ -37,7 +37,24 @@ def dicionarios(a):
 	for i in a:
 		inbuffer = i
 		merged = merge(inbuffer)
- #		chaveValor = retornaChaveValor(merged)	
+ 		chaveValor = retornaChaveValor(merged)	
+		for i in range(len(chaveValor)):
+				
+		
+		dic = dict(chaveValor for i in range(0, len(merged), 2))
+		retorno.append(dic)
+	retorno.pop(0)
+	return retorno
+
+
+dados = csvtolist('dados',',')
+
+lista = merge(dados)
+#print retornaChaveValor(lista)
+
+lib = dicionarios(dados)
+
+print lib
 		dic = dict(merged[i:i+2] for i in range(0, len(merged), 2))
 		retorno.append(dic)
 	retorno.pop(0)
